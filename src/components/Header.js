@@ -27,7 +27,7 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: 52,
+    height: 50,
     display: 'flex',
     flexDirection: 'row',
   },

@@ -1,16 +1,23 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, View, Dimensions, Image, Text, Animated, TouchableOpacity, ScrollView } from 'react-native';
 import {Header} from '../components/Header';
 import {ImageSlider} from '../components/ImageSlider';
+import Interactable from 'react-native-interactable';
+import {BottomCart} from '../components/BottomCart'
 
 export class MainScreen extends React.Component {
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
   render() {
-    return <View>
-      <Header />
-      <ImageSlider />
-      <Text>MainScreens</Text>
-    </View>
+    return (
+      <View>
+        <Header/>
+        <ImageSlider/>
+
+        <BottomCart />
+
+      </View>
+    );
   }
 }
