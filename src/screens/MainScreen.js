@@ -1,15 +1,16 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
+import {Header} from '../components/Header';
+import {ImageSlider} from '../components/ImageSlider';
 
-class CatalogScreen extends React.Component {
-
-  componentDidMount() {
-
-    }
+export class MainScreen extends React.Component {
+  componentDidMount() {}
 
   render() {
     return <View>
-      <Text>AAAAA</Text>
+      <Header />
+      <ImageSlider />
+      <Text>MainScreens</Text>
     </View>
   }
 }

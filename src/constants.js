@@ -1,8 +1,8 @@
 import {Dimensions} from 'react-native';
 
 export const win = Dimensions.get('window');
-export const w = win.width;
-export const h = win.height;
+export const screenWidth = win.width;
+export const screenHeight = win.height;
 
 //THEME COLORS
 export const THEME = {
@@ -13,5 +13,5 @@ export const THEME = {
   FONT_GRAY: '#212121',
   FONT_SIZE_LARGE: 24,
   FONT_SIZE_MIDDLE: 20,
-  DONT_SIZE_SMALL: 16,
+  FONT_SIZE_SMALL: 16,
 }
