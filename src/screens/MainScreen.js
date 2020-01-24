@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import { StyleSheet, View, Dimensions, Image, Text, Animated, TouchableOpacity, ScrollView } from 'react-native';
+import React from 'react';
+import {View, ScrollView} from 'react-native';
 import {Header} from '../components/Header';
 import {ImageSlider} from '../components/ImageSlider';
-import Interactable from 'react-native-interactable';
-import {BottomCart} from '../components/BottomCart'
+import {BottomCart} from '../components/BottomCart';
+import {NewestProducts} from '../components/NewestProducts';
 
 export class MainScreen extends React.Component {
   componentDidMount() {
@@ -13,10 +13,11 @@ export class MainScreen extends React.Component {
     return (
       <View>
         <Header/>
-        <ImageSlider/>
-
-        <BottomCart />
-
+        <ScrollView>
+          <ImageSlider/>
+          <NewestProducts/>
+        </ScrollView>
+        <BottomCart/>
       </View>
     );
   }

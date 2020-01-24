@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Dimensions, Image, Text, Animated, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, View, Image, Text, Animated, TouchableOpacity, ScrollView} from 'react-native';
 import Interactable from 'react-native-interactable';
 import {THEME} from '../constants';
 import {screenWidth, screenHeight} from '../constants';
