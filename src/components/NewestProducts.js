@@ -6,21 +6,41 @@ import {screenWidth, THEME} from '../constants';
 import {NewestItem} from './NewestItem';
 import {AppButton} from './AppButton';
 
-const renderItems = () => {
-  return <NewestItem />
+const renderItems = ({item, index}) => {
+  return <NewestItem item={item} />
 };
 
 export const NewestProducts = () => {
+  const data = [
+    {
+      id: 1,
+      name: 'Теплый сет',
+      costOld: 700,
+      cost: 630,
+    },
+    {
+      id: 1,
+      name: 'Сет Love',
+      costOld: 700,
+      cost: 630,
+    },
+    {
+      id: 1,
+      name: 'Сет Топ-Роллы',
+      costOld: 900,
+      cost: 800,
+    },
+  ];
   return (
     <View style={styles.wrapper}>
       <View style={styles.titleSection}>
         <Text style={styles.titleText}>
-          Новинки:
+          Новинки
         </Text>
       </View>
       <View style={styles.newestWrapper}>
         <Carousel
-          data={[{id: 1}, {id: 2}, {id: 3}]}
+          data={data}
           renderItem={renderItems}
           sliderWidth={screenWidth}
           sliderHeight={300}
@@ -31,10 +51,9 @@ export const NewestProducts = () => {
           autoplayDelay={1000}
           autoplayInterval={3000}
         />
-        <View>
+        <View style={styles.buttonWrapper}>
           <AppButton title={'Перейти в каталог'}/>
         </View>
-        <NewestItem />
       </View>
     </View>
   );
@@ -45,6 +64,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 10,
     paddingVertical: 20,
+    marginTop: 40,
+    marginBottom: 200,
   },
   titleSection: {
     justifyContent: 'center',
@@ -52,11 +73,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: THEME.FONT_FAMILY,
-    fontSize: THEME.FONT_SIZE_LARGE,
+    fontSize: THEME.FONT_SIZE_HEADERS,
     textTransform: 'uppercase',
   },
   newestWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonWrapper: {
+    marginTop: 20,
+  }
 });

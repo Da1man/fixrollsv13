@@ -2,10 +2,10 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import {THEME, screenWidth} from '../constants';
 
-export const NewestItem = () => {
+export const NewestItem = ({item}) => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.imageWrapper}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.imageWrapper}>
         <Image
           style={styles.image}
           source={{
@@ -14,18 +14,18 @@ export const NewestItem = () => {
           }}
           PlaceholderContent={<ActivityIndicator />}
         />
-      </View>
+      </TouchableOpacity>
       <View style={styles.titleWrapper} >
         <Text style={styles.titleText}>
-          Теплый Сет
+          {item.name}
         </Text>
       </View>
       <View style={styles.priceWrapper} >
         <Text style={styles.priceTextOld}>
-          700 р
+          {item.costOld}
         </Text>
         <Text style={styles.priceTextNew}>
-          630 р
+          {item.cost}
         </Text>
       </View>
     </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: screenWidth - 20,
-    height: screenWidth / 1.7,
+    height: screenWidth / 1.1,
   },
   titleWrapper: {
     justifyContent: 'center',
@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: THEME.FONT_FAMILY,
-    fontSize: THEME.FONT_SIZE_MIDDLE,
+    fontSize: THEME.FONT_SIZE_LARGE,
+    textTransform: 'uppercase',
   },
   priceWrapper: {
     justifyContent: 'center',
@@ -68,6 +69,6 @@ const styles = StyleSheet.create({
     fontFamily: THEME.FONT_FAMILY,
     fontSize: 30,
     padding: 5,
-    color: THEME.FONT_ACENT,
+    color: THEME.FONT_ACCENT,
   },
 });

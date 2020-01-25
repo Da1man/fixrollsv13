@@ -4,6 +4,7 @@ import Interactable from 'react-native-interactable';
 import {THEME} from '../constants';
 import {screenWidth, screenHeight} from '../constants';
 import {CartItem} from './CartItem';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Screen = {
   width: screenWidth,
@@ -39,10 +40,25 @@ export class BottomCart extends React.Component {
             <View style={styles.panelHeader}>
               <View style={styles.panelHandle}/>
             </View>
-            <Text style={styles.panelTitle}>Корзина</Text>
-            <Text style={styles.panelSubtitle}>Всего в корзине: 0 товаров</Text>
+            <View style={styles.cartTotalWrapper}>
+              <View style={styles.cartTotalSection}>
+                <Text style={styles.panelSubtitle}>Всего</Text>
+                <Text style={styles.pannelCost}>100500 р</Text>
+
+              </View>
+              <TouchableOpacity style={styles.cartCheckoutButton} activeOpacity={0.5}>
+                <Icon name='shopping-cart'
+                      size={THEME.FONT_SIZE_HEADERS}
+                      color={THEME.BACKGROUND_GRAY}
+                />
+              </TouchableOpacity>
+              <View>
+
+              </View>
+            </View>
+
             <ScrollView>
-              <CartItem />
+              <CartItem/>
               <TouchableOpacity style={styles.panelButton}>
                 <Text style={styles.panelButtonTitle}>Directions</Text>
               </TouchableOpacity>
@@ -60,7 +76,7 @@ export class BottomCart extends React.Component {
               <TouchableOpacity style={styles.panelButton}>
                 <Text style={styles.panelButtonTitle}>Directions</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.panelButton}>
+              <TouchableOpacity style={styles.panelButton} activeOpacity={0.5}>
                 <Text style={styles.panelButtonTitle}>Search Nearby</Text>
               </TouchableOpacity>
               <Image style={styles.photo} source={require('../../assets/images/airport-photo.jpg')}/>
@@ -93,27 +109,47 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     elevation: 8,
     borderWidth: 1,
-    borderColor: THEME.FONT_GRAY,
+    borderColor: THEME.FONT_GRAY_LIGHT,
   },
   panelHeader: {
     alignItems: 'center',
   },
   panelHandle: {
-    width: 80,
-    height: 8,
+    width: 40,
+    height: 4,
     borderRadius: 4,
     backgroundColor: THEME.MAIN_COLOR,
-    marginBottom: 10,
+    marginBottom: 20,
+  },
+  cartTotalWrapper: {
+    flexDirection: 'row',
+    height: 50,
+    justifyContent: 'space-between',
+    marginBottom: 30,
+  },
+  cartTotalSection: {
+    width: '50%',
+    alignItems: 'center',
+  },
+  cartCheckoutButton: {
+    width: '50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    backgroundColor: THEME.MAIN_COLOR,
   },
   panelTitle: {
     fontSize: 27,
     height: 35,
   },
+  pannelCost: {
+    fontSize: THEME.FONT_SIZE_HEADERS,
+    color: THEME.MAIN_COLOR,
+    fontFamily: THEME.FONT_FAMILY,
+  },
   panelSubtitle: {
     fontSize: 14,
     color: 'gray',
-    height: 30,
-    marginBottom: 10,
   },
   panelButton: {
     padding: 20,

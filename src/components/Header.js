@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {screenWidth} from '../constants';
+import {screenWidth, THEME} from '../constants';
 import Menu from '../../assets/images/menu-icon.svg';
 import Logo from '../../assets/images/logo.svg';
 import Clock from '../../assets/images/clock-icon.svg';
@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     height: 50,
     display: 'flex',
     flexDirection: 'row',
+    borderColor: THEME.FONT_GRAY_LIGHT,
+    borderBottomWidth: 1,
   },
   menubox: {
     justifyContent: 'center',

@@ -4,7 +4,7 @@ import {THEME, screenWidth} from '../constants';
 
 export const AppButton = ({title}) => {
   return (
-  <TouchableOpacity style={styles.wrapper}>
+  <TouchableOpacity style={styles.wrapper} activeOpacity={0.5}>
     <Text style={styles.text}>{title}</Text>
   </TouchableOpacity>
   )
