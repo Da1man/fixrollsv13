@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text} from 'react-native';
 import {Header} from '../components/Header';
+import {BottomCart} from '../components/BottomCart';
 
 export class WorkTimeScreen extends React.Component {
   componentDidMount() {
@@ -8,10 +9,11 @@ export class WorkTimeScreen extends React.Component {
   render() {
     return (
       <View>
-        <Header/>
+        <Header navigation={this.props.navigation}/>
         <ScrollView>
           <Text>WorkTimeScreen</Text>
         </ScrollView>
+        <BottomCart/>
       </View>
     );
   }

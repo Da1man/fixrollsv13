@@ -10,7 +10,6 @@ export class MainScreen extends React.Component {
   }
 
   render() {
-    console.log(this.props.navigation)
     return (
       <View>
         <Header navigation={this.props.navigation}/>

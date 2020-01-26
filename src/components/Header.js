@@ -27,16 +27,16 @@ export const Header = ({navigation}) => {
 
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity style={styles.menubox} onPress={() => navigation.toggleDrawer()}>
+      <TouchableOpacity style={styles.menubox} activeOpacity={0.5} onPress={() => navigation.toggleDrawer()}>
         <Menu width={42}/>
       </TouchableOpacity>
-      <View style={styles.logobox}>
+      <TouchableOpacity activeOpacity={0.5} style={styles.logobox} onPress={() => navigation.navigate('Main')}>
         <Logo width={screenWidth / 3.5}/>
-      </View>
-      <TouchableOpacity style={styles.timebox}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.timebox} activeOpacity={0.5} onPress={() => navigation.navigate('Time')}>
         <Clock/>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.phonebox}>
+      <TouchableOpacity style={styles.phonebox} activeOpacity={0.5} onPress={() => navigation.navigate('Callback', { transition: 'vertical' })}>
         <Phone/>
       </TouchableOpacity>
     </View>

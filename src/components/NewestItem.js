@@ -43,8 +43,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    width: screenWidth - 20,
+    width: screenWidth - 40,
     height: screenWidth / 1.1,
+    borderRadius: 20,
   },
   titleWrapper: {
     justifyContent: 'center',

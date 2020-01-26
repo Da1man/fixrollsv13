@@ -1,14 +1,19 @@
 import React from 'react';
+import {Animated, Easing} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createDrawerNavigator} from 'react-navigation-drawer';
+
+import { fromLeft } from 'react-navigation-transitions';
+
 import {MainScreen} from './MainScreen';
 import {CatalogScreen} from './CatalogScreen';
 import {WorkTimeScreen} from './WorkTimeScreen';
 import {CallBackScreen} from './CallBackScreen';
 import {DeliveryScreen} from './DeliveryScreen';
 import {THEME} from '../constants';
+
 
 const MainNavigator = createDrawerNavigator({
     Main: {
@@ -45,12 +50,8 @@ const MainNavigator = createDrawerNavigator({
   },
   {
     drawerType: 'slide',
-    contentOptions: {
-      activeTintColor: THEME.MAIN_COLOR,
-      labelStyle: {
-        fontFamily: THEME.FONT_FAMILY,
-      },
-    },
+    initialRouteName: 'Main',
+    transitionConfig: () => fromLeft(),
   });
 
 export const AppNavigation = createAppContainer(MainNavigator);

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text} from 'react-native';
 import {Header} from '../components/Header';
+import {BottomCart} from '../components/BottomCart';
 
 export class CallBackScreen extends React.Component {
   componentDidMount() {
@@ -9,10 +10,11 @@ export class CallBackScreen extends React.Component {
   render() {
     return (
       <View>
-        <Header/>
+        <Header navigation={this.props.navigation}/>
         <ScrollView>
           <Text>CallBackScreen</Text>
         </ScrollView>
+        <BottomCart/>
       </View>
     );
   }
