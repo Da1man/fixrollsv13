@@ -52,34 +52,14 @@ export class BottomCart extends React.Component {
                       color={THEME.BACKGROUND_GRAY}
                 />
               </TouchableOpacity>
-              <View>
-
-              </View>
             </View>
 
             <ScrollView>
               <CartItem/>
-              <TouchableOpacity style={styles.panelButton}>
-                <Text style={styles.panelButtonTitle}>Directions</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.panelButton}>
-                <Text style={styles.panelButtonTitle}>Search Nearby</Text>
-              </TouchableOpacity>
-              <Image style={styles.photo} source={require('../../assets/images/airport-photo.jpg')}/>
-              <TouchableOpacity style={styles.panelButton}>
-                <Text style={styles.panelButtonTitle}>Directions</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.panelButton}>
-                <Text style={styles.panelButtonTitle}>Search Nearby</Text>
-              </TouchableOpacity>
-              <Image style={styles.photo} source={require('../../assets/images/airport-photo.jpg')}/>
-              <TouchableOpacity style={styles.panelButton}>
-                <Text style={styles.panelButtonTitle}>Directions</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.panelButton} activeOpacity={0.5}>
-                <Text style={styles.panelButtonTitle}>Search Nearby</Text>
-              </TouchableOpacity>
-              <Image style={styles.photo} source={require('../../assets/images/airport-photo.jpg')}/>
+              <CartItem/>
+              <CartItem/>
+              <CartItem/>
+
             </ScrollView>
           </View>
         </Interactable.View>
@@ -98,8 +78,10 @@ const styles = StyleSheet.create({
     right: 0,
   },
   panel: {
-    height: Screen.height + 300,
-    padding: 20,
+    height: Screen.height + 100,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    paddingBottom: 70,
     backgroundColor: THEME.BACKGROUND_GRAY,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,

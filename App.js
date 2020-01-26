@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {MainScreen} from './src/screens/MainScreen';
+import {AppNavigation} from './src/screens/AppNavigation';
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
           barStyle={'dark-content'}
           hidden={true}
         />
-        <MainScreen />
+        <AppNavigation />
       </SafeAreaView>
     );
   };

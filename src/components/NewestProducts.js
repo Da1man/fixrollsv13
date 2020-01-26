@@ -17,18 +17,21 @@ export const NewestProducts = () => {
       name: 'Теплый сет',
       costOld: 700,
       cost: 630,
+      image: 'https://fixrolls.ru/wp-content/uploads/2019/11/HOTSET-1024x705.jpg',
     },
     {
       id: 1,
       name: 'Сет Love',
       costOld: 700,
       cost: 630,
+      image: 'https://fixrolls.ru/wp-content/uploads/2019/10/Set-Love2-1-1-1.jpg',
     },
     {
       id: 1,
       name: 'Сет Топ-Роллы',
       costOld: 900,
       cost: 800,
+      image: 'https://fixrolls.ru/wp-content/uploads/2019/07/Set-05-1.jpg',
     },
   ];
   return (

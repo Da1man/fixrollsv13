@@ -10,9 +10,10 @@ export class MainScreen extends React.Component {
   }
 
   render() {
+    console.log(this.props.navigation)
     return (
       <View>
-        <Header/>
+        <Header navigation={this.props.navigation}/>
         <ScrollView>
           <ImageSlider/>
           <NewestProducts/>

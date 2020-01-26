@@ -10,7 +10,7 @@ export const NewestItem = ({item}) => {
           style={styles.image}
           source={{
             uri:
-              'https://fixrolls.ru/wp-content/uploads/2019/11/HOTSET-1024x705.jpg',
+            item.image,
           }}
           PlaceholderContent={<ActivityIndicator />}
         />
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   imageWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 20,
   },
   image: {
     width: screenWidth - 20,
