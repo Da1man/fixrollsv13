@@ -15,7 +15,7 @@ export class MainScreen extends React.Component {
         <Header navigation={this.props.navigation}/>
         <ScrollView>
           <ImageSlider/>
-          <NewestProducts/>
+          <NewestProducts navigation={this.props.navigation}/>
         </ScrollView>
         <BottomCart/>
       </View>

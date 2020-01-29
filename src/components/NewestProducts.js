@@ -10,7 +10,7 @@ const renderItems = ({item, index}) => {
   return <NewestItem item={item} />
 };
 
-export const NewestProducts = () => {
+export const NewestProducts = ({navigation}) => {
   const data = [
     {
       id: 1,
@@ -55,7 +55,7 @@ export const NewestProducts = () => {
           autoplayInterval={3000}
         />
         <View style={styles.buttonWrapper}>
-          <AppButton title={'Перейти в каталог'}/>
+          <AppButton title={'Перейти в каталог'} onPress={() => navigation.navigate('Catalog')} />
         </View>
       </View>
     </View>

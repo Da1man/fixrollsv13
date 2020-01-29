@@ -7,24 +7,23 @@ import Logo from '../../assets/images/logo.svg';
 import Clock from '../../assets/images/clock-icon.svg';
 import Phone from '../../assets/images/phone-icon.svg';
 
-const ClockIcon = () => {
-  return <View >
-    <AnimatedSVGPath
-      strokeColor={'#4299A1'}
-      duration={7000}
-      strokeWidth={1}
-      height={20}
-      width={150}
-      scale={2}
-      delay={0}
-      d={Loader}
-      loop={true}
-    />
-  </View>
-}
+// const ClockIcon = () => {
+//   return <View >
+//     <AnimatedSVGPath
+//       strokeColor={'#4299A1'}
+//       duration={7000}
+//       strokeWidth={1}
+//       height={20}
+//       width={150}
+//       scale={2}
+//       delay={0}
+//       d={Loader}
+//       loop={true}
+//     />
+//   </View>
+// }
 
 export const Header = ({navigation}) => {
-
   return (
     <View style={styles.wrapper}>
       <TouchableOpacity style={styles.menubox} activeOpacity={0.5} onPress={() => navigation.toggleDrawer()}>
