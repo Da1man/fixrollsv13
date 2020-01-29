@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 20,
     marginTop: 40,
-    marginBottom: 200,
+    marginBottom: 30,
   },
   titleSection: {
     justifyContent: 'center',

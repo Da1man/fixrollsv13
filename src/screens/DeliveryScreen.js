@@ -5,6 +5,12 @@ import {BottomCart} from '../components/BottomCart';
 import {screenWidth, THEME} from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {ZeroRub} from '../components/DeliveryItems/ZeroRub';
+import {OneHour} from '../components/DeliveryItems/OneHour';
+import {FivehundRub} from '../components/DeliveryItems/FivehundRub';
+import {WorkTime} from '../components/DeliveryItems/WorkTime';
+
 
 export class DeliveryScreen extends React.Component {
   componentDidMount() {
@@ -19,83 +25,26 @@ export class DeliveryScreen extends React.Component {
             <View style={styles.titleSection}>
               <Text style={styles.titleText}>Доставка и оплата</Text>
             </View>
-            <View style={styles.deliveryItemWrapper}>
-              <View style={styles.iconWrapper}>
-                <SimpleIcon name='emotsmile'
-                      size={70}
-                      color={THEME.FONT_ACCENT}
-                />
-              </View>
-              <View style={styles.itemTitleWrapper}>
-                <Text style={styles.itemTitleText}>0 РУБЛЕЙ</Text>
-              </View>
-              <View style={styles.itemDescWrapper}>
-                <Text style={styles.itemDescText}>Вы оплачивайте только заказ</Text>
-                <Text style={styles.itemDescText}>Доставку мы осуществляем бесплатно, при исполнении минимальной суммы заказа</Text>
-              </View>
-            </View>
-
-
-            <View style={styles.deliveryItemWrapper}>
-              <View style={styles.iconWrapper}>
-                <SimpleIcon name='clock'
-                      size={70}
-                      color={THEME.FONT_ACCENT}
-                />
-              </View>
-              <View style={styles.itemTitleWrapper}>
-                <Text style={styles.itemTitleText}>1 ЧАС</Text>
-              </View>
-              <View style={styles.itemDescWrapper}>
-                <Text style={styles.itemDescText}>Время доставки по городу до 1 часа.</Text>
-              </View>
-            </View>
-
-
-            <View style={styles.deliveryItemWrapper}>
-              <View style={styles.iconWrapper}>
-                <SimpleIcon name='emotsmile'
-                      size={70}
-                      color={THEME.FONT_ACCENT}
-                />
-              </View>
-              <View style={styles.itemTitleWrapper}>
-                <Text style={styles.itemTitleText}>500 РУБЛЕЙ</Text>
-              </View>
-              <View style={styles.itemDescWrapper}>
-                <Text style={styles.itemDescText}>Минимальная сумма заказа:</Text>
-                <Text style={styles.itemDescText}>г. Кимры/Савелово - 500 рублей</Text>
-                <Text style={styles.itemDescText}>Деревни/Садовые товарищества/ДОК —  1000 рублей</Text>
-              </View>
-            </View>
-
-
-            <View style={styles.deliveryItemWrapper}>
-              <View style={styles.iconWrapper}>
-                <SimpleIcon name='clock'
-                      size={70}
-                      color={THEME.FONT_ACCENT}
-                />
-              </View>
-              <View style={styles.itemTitleWrapper}>
-                <Text style={styles.itemTitleText}>ВРЕМЯ РАБОТЫ</Text>
-              </View>
-              <View style={styles.itemDescWrapper}>
-                <Text style={styles.itemDescText}>Время работы доставки:</Text>
-                <Text style={styles.itemDescText}>вс-чт 11.00-22.00</Text>
-                <Text style={styles.itemDescText}>пт, сб 11.00-00.00</Text>
-              </View>
-            </View>
+            <ZeroRub />
+            <OneHour />
+            <FivehundRub />
+            <WorkTime />
 
 
             <View style={styles.quoteWrapper}>
               <View style={styles.quoteIconWrapper}>
-                <Icon name='quote-right'
-                      size={30}
+                <Ionicons name='ios-gift'
+                      size={50}
                       color={THEME.FONT_ACCENT}
                  />
               </View>
-              <Text>С каждым заказом вы получаете палочки, салфетки, зубочистки, соевый соус (50 мл), имбирь (25 гр), васаби (10 г)</Text>
+              <View style={styles.quoteTextWrapper}>
+                <Text style={styles.quoteText}>С каждым заказом вы получаете:</Text>
+                <Text style={styles.quoteText}>Палочки, салфетки, зубочистки</Text>
+                <Text style={styles.quoteText}>Соевый соус (50 мл)</Text>
+                <Text style={styles.quoteText}>Имбирь (25 гр)</Text>
+                <Text style={styles.quoteText}>Васаби (10 г)</Text>
+              </View>
             </View>
 
 
@@ -125,39 +74,21 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONT_SIZE_HEADERS,
     textTransform: 'uppercase',
   },
-  deliveryItemWrapper: {
-    backgroundColor: THEME.BACKGROUND_GRAY,
-    width: screenWidth / 1.3,
-    height: screenWidth / 1.3,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 50,
-    marginBottom: 30,
-  },
-  iconWrapper: {
-  },
-  itemTitleWrapper: {
-    marginVertical: 20,
-  },
-  itemTitleText: {
-    fontSize: THEME.FONT_SIZE_LARGE,
-    fontFamily: THEME.FONT_FAMILY,
-  },
-  itemDescWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  itemDescText: {
-    textAlign: 'center',
-    fontSize: THEME.FONT_SIZE_MIDDLE,
-    marginBottom: 10,
-  },
   quoteWrapper: {
     flexDirection: 'row',
-    paddingHorizontal: 30,
+    width: screenWidth / 1.3,
+    padding: 10,
   },
   quoteIconWrapper: {
-
+    marginRight: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  quoteText: {
+    fontSize: THEME.FONT_SIZE_MIDDLE,
+    flex: 1,
+    flexWrap: 'wrap',
+    fontStyle: 'italic',
+    paddingBottom: 5,
   },
 });
