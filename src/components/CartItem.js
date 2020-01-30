@@ -78,15 +78,16 @@ const styles = StyleSheet.create({
   imageSection: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: '40%',
+    width: screenWidth / 2.5,
+    height: screenWidth / 2.5,
   },
   productImage: {
     width: '100%',
-    height: screenWidth / 3,
+    height: screenWidth / 2.5,
     borderRadius: 20,
   },
   infoSection: {
-    width: '60%',
+    width: '53%',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'flex-end',

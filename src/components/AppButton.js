@@ -3,7 +3,6 @@ import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {THEME, screenWidth} from '../constants';
 
 export const AppButton = ({title, onPress}) => {
-  console.log(onPress)
   return (
   <TouchableOpacity style={styles.wrapper} activeOpacity={0.5} onPress={onPress}>
     <Text style={styles.text}>{title}</Text>
