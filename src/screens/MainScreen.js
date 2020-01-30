@@ -33,9 +33,10 @@ export class MainScreen extends React.Component {
 const styles = StyleSheet.create({
   mainContainer: {
     marginBottom: screenWidth / 3,
+    paddingBottom: 10,
   },
   advantages: {
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
 });

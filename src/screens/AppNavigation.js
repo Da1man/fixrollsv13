@@ -50,7 +50,7 @@ const MainNavigator = createDrawerNavigator({
   },
   {
     drawerType: 'slide',
-    initialRouteName: 'Delivery',
+    initialRouteName: 'Time',
     transitionConfig: () => fromLeft(),
   });
 
