@@ -8,7 +8,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import { fromLeft } from 'react-navigation-transitions';
 
 import {MainScreen} from './MainScreen';
-import {CatalogScreen} from './CatalogScreen';
+import CatalogScreen from './CatalogScreen';
 import {WorkTimeScreen} from './WorkTimeScreen';
 import {CallBackScreen} from './CallBackScreen';
 import {DeliveryScreen} from './DeliveryScreen';

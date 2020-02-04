@@ -10,6 +10,7 @@ export class WorkTimeScreen extends React.Component {
 
   render() {
     const nowDay = new Date().getDay();
+    console.log(nowDay);
 
     return (
       <View>
@@ -23,38 +24,38 @@ export class WorkTimeScreen extends React.Component {
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 0 ? styles.timeListDayActive : styles.timeListDay}>Понедельник</Text>
-              <Text style={nowDay === 0 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
-            </View>
-
-            <View style={styles.timeList}>
-              <Text style={nowDay === 1 ? styles.timeListDayActive : styles.timeListDay}>Вторник</Text>
+              <Text style={nowDay === 1 ? styles.timeListDayActive : styles.timeListDay}>Понедельник</Text>
               <Text style={nowDay === 1 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 2 ? styles.timeListDayActive : styles.timeListDay}>Среда</Text>
+              <Text style={nowDay === 2 ? styles.timeListDayActive : styles.timeListDay}>Вторник</Text>
               <Text style={nowDay === 2 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 3 ? styles.timeListDayActive : styles.timeListDay}>Четверг</Text>
+              <Text style={nowDay === 3 ? styles.timeListDayActive : styles.timeListDay}>Среда</Text>
               <Text style={nowDay === 3 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 4 ? styles.timeListDayActive : styles.timeListDay}>Пятница</Text>
-              <Text style={nowDay === 4 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 00:00</Text>
+              <Text style={nowDay === 4 ? styles.timeListDayActive : styles.timeListDay}>Четверг</Text>
+              <Text style={nowDay === 4 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 5 ? styles.timeListDayActive : styles.timeListDay}>Суббота</Text>
+              <Text style={nowDay === 5 ? styles.timeListDayActive : styles.timeListDay}>Пятница</Text>
               <Text style={nowDay === 5 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 00:00</Text>
             </View>
 
             <View style={styles.timeList}>
-              <Text style={nowDay === 6 ? styles.timeListDayActive : styles.timeListDay}>Воскресенье</Text>
-              <Text style={nowDay === 6 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
+              <Text style={nowDay === 6 ? styles.timeListDayActive : styles.timeListDay}>Суббота</Text>
+              <Text style={nowDay === 6 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 00:00</Text>
+            </View>
+
+            <View style={styles.timeList}>
+              <Text style={nowDay === 0 ? styles.timeListDayActive : styles.timeListDay}>Воскресенье</Text>
+              <Text style={nowDay === 0 ? styles.timeListDayActive : styles.timeListTime}>11:00 - 22:00</Text>
             </View>
 
           </View>

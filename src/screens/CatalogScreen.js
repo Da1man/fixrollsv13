@@ -4,12 +4,15 @@ import {Header} from '../components/Header';
 import {BottomCart} from '../components/BottomCart';
 import {screenWidth, THEME} from '../constants';
 import {CatalogItem} from '../components/CatalogItem';
+import {connect} from 'react-redux';
 
-export class CatalogScreen extends React.Component {
+class CatalogScreen extends React.Component {
   componentDidMount() {
   }
 
   render() {
+    let renderProducts = this.props.products.map(p => <CatalogItem image={p.image} key={p.id} />)
+
     return (
       <View>
         <Header navigation={this.props.navigation}/>
@@ -19,17 +22,7 @@ export class CatalogScreen extends React.Component {
               <Text style={styles.titleText}>Каталог товаров</Text>
             </View>
             <View style={styles.listWrapper}>
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/10/Set-Love2-1-1-1.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/06/Apelsin-Roll-1.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/CHiken-Lava.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Filadelfiya-MIX.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Filadelfiya-LITE.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Taj-Hot.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/06/Apelsin-Roll-1.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/CHiken-Lava.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Filadelfiya-MIX.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Filadelfiya-LITE.jpg'} />
-              <CatalogItem image={'https://fixrolls.ru/wp-content/uploads/2019/03/Taj-Hot.jpg'} />
+              {renderProducts}
             </View>
           </View>
         </ScrollView>
@@ -38,6 +31,18 @@ export class CatalogScreen extends React.Component {
     );
   }
 }
+
+let mapStateToProps = state => {
+  return {
+    products: state.catalog.products,
+    isFetching: state.catalog.isFetching,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {})
+(CatalogScreen);
 
 const styles = StyleSheet.create({
   wrapper: {

@@ -1,7 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import {MainScreen} from './src/screens/MainScreen';
 import {AppNavigation} from './src/screens/AppNavigation';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
 
 class App extends React.Component {
   render() {
@@ -12,7 +13,9 @@ class App extends React.Component {
           barStyle={'dark-content'}
           hidden={true}
         />
-        <AppNavigation />
+        <Provider store={store}>
+          <AppNavigation/>
+        </Provider>
       </SafeAreaView>
     );
   };
